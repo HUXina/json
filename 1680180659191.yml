@@ -1,0 +1,172 @@
+allow-lan: false
+bind-address: 127.0.0.1
+dns:
+  ake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 114.114.114.114
+  - 119.29.29.29
+  - 223.5.5.5
+  enable: true
+  enhanced-mode: redir-host
+  fallback-filter:
+    geoip: true
+    ipcidr:
+    - 240.0.0.0/4
+  ipv6: false
+  nameserver:
+  - https://223.5.5.5/dns-query
+  - https://223.6.6.6/dns-query
+  - https://doh.pub/dns-query
+  use-hosts: true
+external-controller: 127.0.0.1:19090
+log-level: warning
+mixed-port: 9981
+mode: rule
+proxies:
+- alterId: 2
+  cipher: auto
+  name: 美国硅谷
+  network: ws
+  port: 80
+  server: b66e0559-rsngg0-1filk.sj.comefromchinatown.com
+  type: vmess
+  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
+  ws-headers:
+    Host: broadcastlv.chat.bilibili.com
+  ws-path: /
+- alterId: 2
+  cipher: auto
+  name: 美國洛杉磯
+  network: ws
+  port: 80
+  server: b66e0559-rsngg0-1filk.static.tcpbbr.net
+  type: vmess
+  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
+  ws-headers:
+    Host: www.hgcbroadband.com
+  ws-path: /
+- alterId: 2
+  cipher: auto
+  name: 美國西雅圖
+  network: ws
+  port: 80
+  server: b66e0559-rsngg0-1filk.us.tcpbbr.net
+  type: vmess
+  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
+  ws-headers:
+    Host: images-eu.ssl-images-amazon.com
+  ws-path: /
+- alterId: 2
+  cipher: auto
+  name: 英國
+  network: ws
+  port: 80
+  server: b66e0559-rsngg0-1filk.uk.tcpbbr.net
+  type: vmess
+  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
+  ws-headers:
+    Host: broadcastlv.chat.bilibili.com
+  ws-path: /
+- alterId: 2
+  cipher: auto
+  name: 日本
+  network: ws
+  port: 80
+  server: b66e0559-rsngg0-1filk.jp.p5pv.com
+  type: vmess
+  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
+  ws-headers:
+    Host: broadcastlv.chat.bilibili.com
+  ws-path: /
+- alterId: 2
+  cipher: auto
+  name: 韩國
+  network: ws
+  port: 80
+  server: b66e0559-rsngg0-1filk.kr.p5pv.com
+  type: vmess
+  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
+  ws-headers:
+    Host: broadcastlv.chat.bilibili.com
+  ws-path: /
+- alterId: 64
+  cipher: auto
+  name: s1美国
+  network: tcp
+  port: 42288
+  server: 198.2.198.11
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  path: /
+- name: s2日本
+  type: trojan
+  server: awsjp15-data.amazon-azure.com
+  port: 443
+  password: "66e62116-d443-4f94-b985-817755636313"
+  sni: data.amazon-azure.com
+  tls: true
+proxy-groups:
+- name: Node
+  proxies:
+  - 美国硅谷
+  - 美國洛杉磯
+  - 美國西雅圖
+  - 英國
+  - 日本
+  - 韩國
+  - s1美国
+  - s2日本
+  type: select  
+rules:
+- DOMAIN-SUFFIX,ip-api.com,DIRECT
+- DOMAIN-SUFFIX,ipip.net,DIRECT
+- DOMAIN-SUFFIX,ip138.com,DIRECT
+- DOMAIN-SUFFIX,stunnel.vip,DIRECT
+- DOMAIN-SUFFIX,gotochinatown.net,DIRECT
+- DOMAIN-SUFFIX,Node.org,DIRECT
+- DOMAIN-SUFFIX,fastapi.me,DIRECT
+- DOMAIN-SUFFIX,vps315.com,DIRECT
+- DOMAIN-SUFFIX,copyplay.net,DIRECT
+- DOMAIN-SUFFIX,pickdown.net,DIRECT
+- DOMAIN-SUFFIX,ggsync.net,DIRECT
+- DOMAIN-SUFFIX,Nodesync.com,DIRECT
+- DOMAIN-SUFFIX,Nodesync.net,DIRECT
+- DOMAIN-SUFFIX,cnsync.net,DIRECT
+- DOMAIN-SUFFIX,browserapi.net,DIRECT
+- DOMAIN-KEYWORD,google,Node
+- DOMAIN-KEYWORD,youtube,Node
+- DOMAIN-SUFFIX,ggpht.com,Node
+- DOMAIN-SUFFIX,gmail.com,Node
+- DOMAIN-SUFFIX,gvt2.com,Node
+- DOMAIN-SUFFIX,gvt3.com,Node
+- DOMAIN-SUFFIX,chrome.com,Node
+- DOMAIN-SUFFIX,wikipedia.org,Node
+- DOMAIN-SUFFIX,wikimedia.org,Node
+- DOMAIN-SUFFIX,appspot.com,Node
+- DOMAIN-SUFFIX,android.com,Node
+- DOMAIN-SUFFIX,github.com,Node
+- DOMAIN-SUFFIX,gitbook.com,Node
+- DOMAIN-SUFFIX,kaggle.com,Node
+- DOMAIN-SUFFIX,arxiv.org,Node
+- DOMAIN-SUFFIX,wiktionary.org,Node
+- DOMAIN-SUFFIX,blogger.com,Node
+- DOMAIN-SUFFIX,youtu.be,Node
+- DOMAIN-SUFFIX,ytimg.com,Node
+- DOMAIN-SUFFIX,youtube.com,Node
+- DOMAIN-SUFFIX,instagram.com,Node
+- DOMAIN-SUFFIX,twitter.com,Node
+- DOMAIN-SUFFIX,t.co,Node
+- DOMAIN-SUFFIX,facebook.com,Node
+- DOMAIN-SUFFIX,telegram.org,Node
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,172.23.0.0/12,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR6,::1/128,DIRECT
+- IP-CIDR6,fc00::/7,DIRECT
+- IP-CIDR6,fe80::/10,DIRECT
+- IP-CIDR6,fd00::/8,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,Node
