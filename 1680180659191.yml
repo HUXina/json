@@ -23,99 +23,63 @@ log-level: warning
 mixed-port: 9981
 mode: rule
 proxies:
-- alterId: 2
-  cipher: auto
-  name: A美国硅谷
-  network: ws
-  port: 80
-  server: b66e0559-rsngg0-1filk.sj.comefromchinatown.com
-  type: vmess
-  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
-  ws-headers:
-    Host: broadcastlv.chat.bilibili.com
-  ws-path: /
-- alterId: 2
-  cipher: auto
-  name: B美國洛杉磯
-  network: ws
-  port: 80
-  server: b66e0559-rsngg0-1filk.static.tcpbbr.net
-  type: vmess
-  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
-  ws-headers:
-    Host: www.hgcbroadband.com
-  ws-path: /
-- alterId: 2
-  cipher: auto
-  name: C美國西雅圖
-  network: ws
-  port: 80
-  server: b66e0559-rsngg0-1filk.us.tcpbbr.net
-  type: vmess
-  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
-  ws-headers:
-    Host: images-eu.ssl-images-amazon.com
-  ws-path: /
-- alterId: 2
-  cipher: auto
-  name: D英國
-  network: ws
-  port: 80
-  server: b66e0559-rsngg0-1filk.uk.tcpbbr.net
-  type: vmess
-  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
-  ws-headers:
-    Host: broadcastlv.chat.bilibili.com
-  ws-path: /
-- alterId: 2
-  cipher: auto
-  name: E日本
-  network: ws
-  port: 80
-  server: b66e0559-rsngg0-1filk.jp.p5pv.com
-  type: vmess
-  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
-  ws-headers:
-    Host: broadcastlv.chat.bilibili.com
-  ws-path: /
-- alterId: 2
-  cipher: auto
-  name: F韩國
-  network: ws
-  port: 80
-  server: b66e0559-rsngg0-1filk.kr.p5pv.com
-  type: vmess
-  uuid: 627a1c98-3bbd-11ec-a8bf-f23c91cfbbc9
-  ws-headers:
-    Host: broadcastlv.chat.bilibili.com
-  ws-path: /
 - alterId: 64
   cipher: auto
-  name: G美国
+  name: A美国
   network: tcp
   port: 41702
   server: 107.167.12.24
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   path: /
-- name: H日本
-  type: trojan
-  server: awsjp15-data.amazon-azure.com
-  port: 443
-  password: "66e62116-d443-4f94-b985-817755636313"
-  sni: data.amazon-azure.com
-  tls: true
+- alterId: 0
+  cipher: auto
+  name: B美国
+  network: ws
+  port: 80
+  server: cf-lt.sharecentre.online
+  type: vmess
+  uuid: 2d5d8b9c-8ec4-4a37-b610-78e71e13eaef
+  ws-headers:
+    Host: do.sharecentrepro.com
+  ws-path: /shirker
+- alterId: 0
+  cipher: auto
+  name: C美国
+  network: ws
+  port: 80
+  server: 192.203.230.86
+  type: vmess
+  uuid: a442dacf-cbb3-488a-9744-61494ea38630
+  ws-headers:
+    Host: us-1.acyun.cf
+  ws-path: /
+- alterId: 64
+  cipher: auto
+  name: D美国
+  network: tcp
+  port: 42002
+  server: 137.175.18.91
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  path: /
+- alterId: 64
+  cipher: auto
+  name: E美国
+  network: tcp
+  port: 41288
+  server: 192.74.239.23
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  path: /
 proxy-groups:
 - name: Node
   proxies:
-  - A美国硅谷
-  - B美國洛杉磯
-  - C美國西雅圖
-  - D英國
-  - E日本
-  - F韩國
-  - G美国
-  - H日本
+  - A美国
+  - B美国
+  - C美国
+  - D美国
+  - E美国
   type: select  
 rules:
 - DOMAIN-SUFFIX,ip-api.com,DIRECT
