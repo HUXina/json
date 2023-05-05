@@ -25,7 +25,7 @@ mode: rule
 proxies:
 - alterId: 2
   cipher: auto
-  name: 美国硅谷
+  name: A美国硅谷
   network: ws
   port: 80
   server: b66e0559-rsngg0-1filk.sj.comefromchinatown.com
@@ -36,7 +36,7 @@ proxies:
   ws-path: /
 - alterId: 2
   cipher: auto
-  name: 美國洛杉磯
+  name: B美國洛杉磯
   network: ws
   port: 80
   server: b66e0559-rsngg0-1filk.static.tcpbbr.net
@@ -47,7 +47,7 @@ proxies:
   ws-path: /
 - alterId: 2
   cipher: auto
-  name: 美國西雅圖
+  name: C美國西雅圖
   network: ws
   port: 80
   server: b66e0559-rsngg0-1filk.us.tcpbbr.net
@@ -58,7 +58,7 @@ proxies:
   ws-path: /
 - alterId: 2
   cipher: auto
-  name: 英國
+  name: D英國
   network: ws
   port: 80
   server: b66e0559-rsngg0-1filk.uk.tcpbbr.net
@@ -69,7 +69,7 @@ proxies:
   ws-path: /
 - alterId: 2
   cipher: auto
-  name: 日本
+  name: E日本
   network: ws
   port: 80
   server: b66e0559-rsngg0-1filk.jp.p5pv.com
@@ -80,7 +80,7 @@ proxies:
   ws-path: /
 - alterId: 2
   cipher: auto
-  name: 韩國
+  name: F韩國
   network: ws
   port: 80
   server: b66e0559-rsngg0-1filk.kr.p5pv.com
@@ -91,14 +91,14 @@ proxies:
   ws-path: /
 - alterId: 64
   cipher: auto
-  name: s1美国
+  name: G美国
   network: tcp
   port: 41702
   server: 107.167.12.24
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   path: /
-- name: s2日本
+- name: H日本
   type: trojan
   server: awsjp15-data.amazon-azure.com
   port: 443
@@ -108,14 +108,14 @@ proxies:
 proxy-groups:
 - name: Node
   proxies:
-  - 美国硅谷
-  - 美國洛杉磯
-  - 美國西雅圖
-  - 英國
-  - 日本
-  - 韩國
-  - s1美国
-  - s2日本
+  - A美国硅谷
+  - B美國洛杉磯
+  - C美國西雅圖
+  - D英國
+  - E日本
+  - F韩國
+  - G美国
+  - H日本
   type: select  
 rules:
 - DOMAIN-SUFFIX,ip-api.com,DIRECT
