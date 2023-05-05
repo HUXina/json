@@ -93,8 +93,8 @@ proxies:
   cipher: auto
   name: s1美国
   network: tcp
-  port: 42288
-  server: 198.2.198.11
+  port: 41702
+  server: 107.167.12.24
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   path: /
